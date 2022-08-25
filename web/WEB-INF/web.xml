@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <context-param>
+        <param-name>Header</param-name>
+        <param-value>Delivery Expenses Records</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Footer</param-name>
+        <param-value>The Delivery Record App is optimized for taking note of the various items that are delivered throughout the day.</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Footer2</param-name>
+        <param-value>Copyright 2022 by Andrei Kyle Hidalgo. All Rights Reserved.</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>AppModel</servlet-name>
+        <servlet-class>Model.AppModel</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AppController</servlet-name>
+        <servlet-class>Controller.AppController</servlet-class>
+        
+     
+       <!--  
+        <init-param>
+            <param-name>jdbcClassName</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbUserName</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPassword</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcDriverURL</param-name>
+            <param-value>jdbc:derby</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbHostName</param-name>
+            <param-value>localhost</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPort</param-name>
+            <param-value>1527</param-value>
+        </init-param>
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>expensesdb</param-value>
+        </init-param>
+                <init-param>
+            <param-name>useSSL</param-name>
+            <param-value></param-value>
+        </init-param>
+     
+        
+    
+        
+    --> 
+        
+        <init-param>
+            <param-name>jdbcClassName</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>        
+        
+        <init-param>
+            <param-name>dbUserName</param-name>
+            <param-value>root</param-value>
+        </init-param> 
+        <init-param>
+            <param-name>dbPassword</param-name>
+            <param-value>H@td0g@143$</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcDriverURL</param-name>
+            <param-value>jdbc:mysql</param-value>
+        </init-param>        
+        
+        <init-param>
+            <param-name>dbHostName</param-name>
+            <param-value>localhost</param-value>
+        </init-param> 
+        <init-param>
+            <param-name>dbPort</param-name>
+            <param-value>3306</param-value>
+        </init-param>
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>database2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>useSSL</param-name>
+            <param-value>?useSSL=false</param-value>
+        </init-param>
+        
+
+        
+  
+        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppModel</servlet-name>
+        <url-pattern>/AppModel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AppController</servlet-name>
+        <url-pattern>/AppController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/ErrorPage.jsp</location>
+    </error-page> 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/Error404.jsp</location>
+    </error-page>
+   
+</web-app>
